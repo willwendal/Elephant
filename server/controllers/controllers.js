@@ -28,6 +28,8 @@ async function postEventsInfo (req, res) {
   }
 };
 
+
+
 module.exports = {
   getEventsInfo,
   postEventsInfo
