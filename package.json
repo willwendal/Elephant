@@ -4,7 +4,8 @@
   "description": "Never forget another event - organise and keep track of upcoming events",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,11 @@
   },
   "homepage": "https://github.com/willwendal/Elephant#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-cors": "0.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0"
   }
 }
