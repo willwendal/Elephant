@@ -11,7 +11,8 @@ async function getEventsInfo (req, res) {
 } catch (err) {
   res.status(400);
   res.send(err);
-}
+  }
+};
 
 async function postEventsInfo (req, res) {
  try { 
@@ -24,4 +25,10 @@ async function postEventsInfo (req, res) {
 } catch (err) {
   res.stauts(400);
   res.send(err);
+  }
+};
+
+module.exports = {
+  getEventsInfo,
+  postEventsInfo
 }
