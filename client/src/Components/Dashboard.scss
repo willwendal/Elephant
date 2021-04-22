@@ -1,6 +1,9 @@
 $green: #067166;
 
 .dashboard-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 2rem;
   background-color: #067166;
   height: 100vh;

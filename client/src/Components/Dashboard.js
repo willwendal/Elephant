@@ -3,7 +3,6 @@ import EventCard from '../Components/Eventcard';
 
 function Dashboard(props) {
 
-  console.log(props.eventData);
   return (
     <div className="dashboard-container">
       {props.eventData.map((event) => {
