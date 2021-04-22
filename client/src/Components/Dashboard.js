@@ -9,7 +9,6 @@ function Dashboard(props) {
         return <EventCard _id={event._id} occasion={event.occasion} date={event.date} />
       })
       }
-      
     </div>
   )
 }

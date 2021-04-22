@@ -1,12 +1,12 @@
 import './Addevent.scss';
 import Navbar from '../Components/Navbar';
-import Dashboard from '../Components/Dashboard';
+import Dashboard2 from '../Components/Dashboard2';
 
 function Addevent() {
   return (
     <div>
       <Navbar />
-      {/* <Dashboard /> */}
+      <Dashboard2 />
     </div>
   )
 }

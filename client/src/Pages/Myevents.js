@@ -23,7 +23,7 @@ function Myevents() {
   return (
     <div>
     <Navbar />
-    <Dashboard eventData={eventcards} />
+    <Dashboard eventData={eventcards}/>
     </div>
   )
 }
