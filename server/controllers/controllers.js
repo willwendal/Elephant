@@ -6,7 +6,7 @@ async function getEventsInfo (req, res) {
   const events = await Events.find();
   JSON.stringify(events);
   res.send(events);
-  res.status(201)
+  res.status(201);
 
 } catch (err) {
   res.status(400);

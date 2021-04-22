@@ -2,15 +2,18 @@ import './App.scss';
 import elephantLogo from './elephant-logo.jpeg';
 import MyEvents from './Pages/Myevents';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function App() {
   // useState isLoggedIn = false
-  return (
-    // {
+  // {
     //   isLoggedIn ? 
     //   <Switch>
     //   : <LoginPage>
     // }
+
+  return (
+    
     <div className="app-container">
       <div className="app-elephant-logo">
         <img src={elephantLogo} alt="elephant logo" />
