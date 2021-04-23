@@ -1,10 +1,9 @@
-import './Dashboard2.scss';
-import Countdown from '../Components/CountdownTimer';
+import './Dashboard2.scss'
+import Countdown from '../Components/CountdownTimer'
 
-function Dashboard(props) {
-
+function Dashboard (props) {
   return (
-    <div className="dashboard-container2">
+    <div className='dashboard-container2'>
       <Countdown />
     </div>
   )
