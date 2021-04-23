@@ -15,7 +15,7 @@ function Myevents () {
         console.log(data)
         setEventCards(data)
       })
-  }, [])
+  }, []) 
 
   return (
     <div>
