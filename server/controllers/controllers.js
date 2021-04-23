@@ -14,12 +14,13 @@ async function getEventsInfo (req, res) {
 
 async function postEventsInfo (req, res) {
   try {
-    const { occasion, date, location, neverforget } = req.body
-    const event = await Events.create({ occasion, date, location, neverforget })
+    const { occasion, date, location } = req.body;
+    console.log(req.body);
+    const event = await Events.create({ occasion, date, location })
     res.status(201)
     res.send(event)
   } catch (err) {
-    res.stauts(400)
+    res.status(400)
     res.send(err)
   }
 };

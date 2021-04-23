@@ -3,7 +3,7 @@ import Dashboard from '../Components/Dashboard'
 import { useEffect, useState } from 'react'
 
 function Myevents () {
-  const [eventcards, setEventCards] = useState([])
+  const [event, setEvent] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3000/my-events')
@@ -13,14 +13,15 @@ function Myevents () {
       })
       .then((data) => {
         console.log(data)
-        setEventCards(data)
+        setEvent(data)
       })
   }, []) 
+
 
   return (
     <div>
       <Navbar />
-      <Dashboard eventData={eventcards} />
+      <Dashboard eventData={event} />
     </div>
   )
 }

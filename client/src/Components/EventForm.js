@@ -1,6 +1,7 @@
 import './EventForm.scss';
+import { useEffect, useState } from 'react';
 
-function EventForm() {
+function EventForm({postEvent}) {
   
   const [ occasion, setOccasion ] = useState('');
   const [ location, setLocation ] = useState('');
@@ -18,10 +19,6 @@ function EventForm() {
     setLocation('');
     setDate('');
   }
-
-  // const buttonHandler = () => {
-  //   setIsLoading(current => !current)
-  // }
   
   
   
@@ -51,7 +48,7 @@ function EventForm() {
           Date
           <input onChange={(e) => {setDate(e.target.value)}} 
           value={date} 
-          type="text"/>
+          type="date"/>
         </h3>
         </div>
         <div>

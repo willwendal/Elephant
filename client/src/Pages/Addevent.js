@@ -1,6 +1,6 @@
-import './Addevent.scss'
-import Navbar from '../Components/Navbar'
-import Dashboard2 from '../Components/Dashboard2'
+import './Addevent.scss';
+import Navbar from '../Components/Navbar';
+import Dashboard2 from '../Components/Dashboard2';
 
 function Addevent () {
 
