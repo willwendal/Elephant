@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .timer-container {
   background-image: url('../alarm-clock.jpg');
   background-position: center;
@@ -40,5 +42,9 @@ section p:first-child {
 
 .timer-colon {
   font-size: 3em;
+}
+
+.timer-header {
+  font-family: 'Roboto', sans-serif;
 }
 
