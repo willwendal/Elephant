@@ -1,5 +1,6 @@
 import './EventForm.scss';
 import { useEffect, useState } from 'react';
+import Todos from './Todos';
 
 function EventForm({postEvent}) {
   
@@ -23,30 +24,30 @@ function EventForm({postEvent}) {
   
   
   return (
-    <div className="addBookBox">
+    <div className="form-add-event">
   
       <form onSubmit={ submitHandler }>
         <h1>Add Event</h1>
-        <div className="form-title">
+        <div className="form-header-container">
           <h3 className="form-header">
             Occasion
-            <input onChange={(e) => {setOccasion(e.target.value)}} 
+            <input className="input" onChange={(e) => {setOccasion(e.target.value)}} 
             value={occasion} 
             type="text"/>
           </h3>
         </div>
-        <div className="form-first-name">
-        <h3>
+        <div className="form-location-container">
+        <h3 className="form-location">
           Location
-          <input onChange={(e) => {setLocation(e.target.value)}} 
+          <input className="input" onChange={(e) => {setLocation(e.target.value)}} 
           value={location} 
           type="text"/>
         </h3>
         </div>
-        <div className="form-surname">
-        <h3>
+        <div className="form-date-button-container">
+        <h3 className="form-date">
           Date
-          <input onChange={(e) => {setDate(e.target.value)}} 
+          <input className="input-date" onChange={(e) => {setDate(e.target.value)}} 
           value={date} 
           type="date"/>
         </h3>
@@ -55,6 +56,7 @@ function EventForm({postEvent}) {
           <button className="submit-button"type="submit">Submit</button>
         </div>
       </form>
+      <Todos />
     </div>
   )
 }

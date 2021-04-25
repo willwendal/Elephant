@@ -1,8 +1,8 @@
 import './App.scss'
-import elephantLogo from './elephant-logo.jpeg'
-import MyEvents from './Pages/Myevents'
+import elephantLogo from './elephant-logo.jpeg';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
+
 
 function App () {
   // useState isLoggedIn = false
@@ -11,6 +11,9 @@ function App () {
   //   <Switch>
   //   : <LoginPage>
   // }
+
+  const history = useHistory();
+  const handleClick = () => history.push('/Myevents');
 
   return (
 
@@ -25,7 +28,7 @@ function App () {
         </p>
       </div>
       <div>
-        <button className='app-button'>
+        <button className='app-button' type="button" onClick={handleClick}>
           Get Started
         </button>
       </div>

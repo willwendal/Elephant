@@ -2,10 +2,8 @@ $green: #067166;
 
 .dashboard-container2 {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 2rem;
+  flex-direction: column;
   background-color: #067166;
-  height: 100vh;
+  height: 150vh;
   border-style: 3px solid black;
 }

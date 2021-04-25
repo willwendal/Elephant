@@ -1,0 +1,54 @@
+$green: #067166;
+
+.form-add-event {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  height: 35vh;
+}
+
+.input {
+  margin-top: 1rem;
+  height: 3rem;
+  width: 45vh;
+}
+
+.input-date {
+  margin-top: 1rem;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.form-location {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.form-date {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.form-date-button-container {
+  margin-bottom: 1rem;
+}
+
+.submit-button {
+  padding:0.35em 1.2em;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background: $green;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  margin-top: 3rem;
+  padding: 1em 6em;
+}
