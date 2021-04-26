@@ -1,6 +1,37 @@
+$green: #067166;
+
 .todo-form {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   margin-right: 5rem;
   margin-top: 3rem;
+  color: #067166;
 }
 
+.todo-input {
+  border: 1px solid $green;
+  margin-left: 2rem;
+}
+
+.todo-button {
+  margin-left: 2rem;
+  border: 2px solid $green;
+}
+
+.todo-button {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background: $green;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  padding: 0.5em 4em;
+  margin-right: 15rem;
+}
+
+.todo-input-button {
+  display: flex;
+  flex-direction: column;
+}

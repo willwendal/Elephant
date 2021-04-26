@@ -1,6 +1,6 @@
 import './EventForm.scss';
 import { useEffect, useState } from 'react';
-import Todos from './Todos';
+
 
 function EventForm({postEvent}) {
   
@@ -27,7 +27,7 @@ function EventForm({postEvent}) {
     <div className="form-add-event">
   
       <form onSubmit={ submitHandler }>
-        <h1>Add Event</h1>
+        <h1 className="form-event-header">Add Event</h1>
         <div className="form-header-container">
           <h3 className="form-header">
             Occasion
@@ -56,7 +56,6 @@ function EventForm({postEvent}) {
           <button className="submit-button"type="submit">Submit</button>
         </div>
       </form>
-      <Todos />
     </div>
   )
 }

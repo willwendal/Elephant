@@ -20,27 +20,28 @@ function Todos() {
   
   return (
     <div className="todo-form">
-      <h1>Todo</h1>
+      <h1>Todo:</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} value={todo} />
-        <button type="submit">Add task</button>
+        <div className="todo-input&button">
+        <input className="todo-input" type="text" onChange={handleChange} value={todo} />
+        <button className="todo-button" type="submit">Add task</button>
+        </div>
       </form>
-      <ul>
-        {todos.map(todo => (
-          <li
-            style={{
-              textDecoration: todo.completed ? 'line-through' : 'none',
-            }}
-            key={todo.id}
-            onClick={() => dispatch(completed(todo.id))}
-          >
-            {todo.text}
-          </li>
-        ))}
-      </ul>
-      {
-        
-      }
+      <div className="todo-list"> 
+        <ul>
+          {todos.map(todo => (
+            <li className="todo-list-item"
+              style={{
+                textDecoration: todo.completed ? 'line-through' : 'none',
+              }}
+              key={todo.id}
+              onClick={() => dispatch(completed(todo.id))}
+            >
+              {todo.text}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

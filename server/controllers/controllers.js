@@ -12,6 +12,21 @@ async function getEventsInfo (req, res) {
   }
 };
 
+// async function getEventsById (req, res) {
+
+//   console.log(req);
+
+//   try {
+//     const event = await Events.findById()
+//     JSON.stringify(event)
+//     res.send(event)
+//     res.status(201)
+//   } catch (err) {
+//     res.status(400)
+//     res.send(err)
+//   }
+// };
+
 async function postEventsInfo (req, res) {
   try {
     const { occasion, date, location } = req.body;
@@ -27,5 +42,6 @@ async function postEventsInfo (req, res) {
 
 module.exports = {
   getEventsInfo,
+  // getEventsById,
   postEventsInfo
 }

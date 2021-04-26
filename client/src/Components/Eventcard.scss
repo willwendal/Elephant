@@ -1,3 +1,5 @@
+$green: #067166;
+
 .event-card {
   display:flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
   padding: 2rem;
   width: 30vh;
   height: 45vh;
-  border: 2px double black;
+  border: 2px double #067166;
   font-family: 'Rock Salt', cursive;
   color: #644E5D;
   background-color: white;
@@ -17,7 +19,7 @@
   0 22.3px 17.9px rgba(0, 0, 0, 0.072),
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12);
-  border-style: double black;
+  border-style: double #067166;
   -moz-border-radius-topleft: 10px;
 -moz-border-radius-topright: 20px;
 -moz-border-radius-bottomright: 30px;
@@ -37,4 +39,17 @@
 .event-date {
   text-align: center;
   font-size: 1.0em;
+}
+
+.event-card-button {
+  padding:0.35em 1.2em;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background: $green;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  margin-top: 3rem;
+  padding: 1em 6em;
 }

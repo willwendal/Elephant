@@ -12,6 +12,8 @@ function CountdownTimer () {
 
   const startTimer = () => {
     const countdownDate = new Date('May 30, 2021 00:00:00').getTime();
+    //get the date from the input form
+    //pass into new countdowndate function
 
     interval = setInterval(() => {
       const now = new Date().getTime();

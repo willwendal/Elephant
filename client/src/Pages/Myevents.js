@@ -8,11 +8,9 @@ function Myevents () {
   useEffect(() => {
     fetch('http://localhost:3000/my-events')
       .then((res) => {
-        console.log(res.body)
         return res.json()
       })
       .then((data) => {
-        console.log(data)
         setEvent(data)
       })
   }, []) 
