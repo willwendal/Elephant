@@ -21,6 +21,7 @@ function Todos() {
   const handleChange = ({ target }) => setTodo(target.value);
   
   return (
+    <div className="todo-form-container">
     <div className="todo-form">
       <h1 className="todo-header">Todo:</h1>
       <form className="todo-input-button" onSubmit={handleSubmit}>
@@ -29,22 +30,23 @@ function Todos() {
         <button className="todo-button" type="submit">Add task</button>
         </div>
       </form>
-      <div className="todo-list"> 
-        <ul>
-          {todos.map(todo => (
-            <li className="todo-list-item"
-              style={{
-                textDecoration: todo.completed ? 'line-through' : 'none',
-              }}
-              key={todo.id}
-              onClick={() => dispatch(completed(todo.id))}
-            >
-              {todo.text}
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
+    <div className="todo-list"> 
+    <ul>
+      {todos.map(todo => (
+        <li className="todo-list-item"
+          style={{
+            textDecoration: todo.completed ? 'line-through' : 'none',
+          }}
+          key={todo.id}
+          onClick={() => dispatch(completed(todo.id))}
+        >
+          {todo.text}
+        </li>
+      ))}
+    </ul>
+  </div>
+  </div>
   );
 };
 

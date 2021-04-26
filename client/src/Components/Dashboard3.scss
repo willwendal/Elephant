@@ -7,8 +7,6 @@ $green: #067166;
   justify-content:space-around;
   align-items: center;
   height: 60vh;
-  margin-top: 3rem;
-  // margin-left: 3rem;
   background-color: lightgray;
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.35),
@@ -30,10 +28,10 @@ $green: #067166;
 }
 
 .dash3-location {
-  margin-top: 2rem;
   color: #644E5D;
   display: flex;
   font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
   
 }
 
@@ -41,4 +39,5 @@ $green: #067166;
   color: #644E5D;
   margin-top: 2rem;
   font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
 }

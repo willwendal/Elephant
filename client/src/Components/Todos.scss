@@ -1,5 +1,10 @@
 $green: #067166;
 
+.todo-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .todo-form {
   display: flex;
   flex-direction: row;
@@ -33,19 +38,18 @@ $green: #067166;
   text-decoration:none;
   padding: 0.5em 4em;
   height: 3vh;
-  // margin-right: 15rem;
-  // margin-top: 1rem;
 }
 
-.todo-input-button {
-  display: flex;
-  flex-direction: column;
-  // margin-top: 2rem;
-  
-}
 
 .todo-list {
-  padding: 3rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  color:#644E5D;
+}
+
+.todo-list-item {
+  margin-top: 1em;
 }
 
 .todo-input-button {
