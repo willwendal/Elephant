@@ -1,8 +1,10 @@
 import './Eventcard.scss'
 import { useHistory } from 'react-router-dom';
+import moment from 'moment';
 
 function Eventcard (props) {
   
+  const formatDate = moment(props.date).format('MMMM Do YYYY');
 
   const history = useHistory();
   const handleClick = () => history.push(`/Eventdetails/${props._id}`);
@@ -13,10 +15,10 @@ function Eventcard (props) {
         {props.occasion}
       </h3>
       <p className='event-date'>
-        {props.date}
+        {formatDate}
       </p>
         <button className='event-card-button' type="button" onClick={handleClick}>
-          Get Started
+          More Details
         </button>
     </div>
   )

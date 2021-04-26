@@ -12,6 +12,8 @@ function Todos() {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    //fetch to backend
     dispatch(addTodo(todo));
     setTodo('');
   };
@@ -22,7 +24,7 @@ function Todos() {
     <div className="todo-form">
       <h1>Todo:</h1>
       <form onSubmit={handleSubmit}>
-        <div className="todo-input&button">
+        <div className="todo-input-button">
         <input className="todo-input" type="text" onChange={handleChange} value={todo} />
         <button className="todo-button" type="submit">Add task</button>
         </div>

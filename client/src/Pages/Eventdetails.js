@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import Dashboard3 from '../Components/Dashboard3';
 import { getDetails } from '../services/APIservice';
-import Todo from '../Components/Todos';
+import Navbar from '../Components/Navbar';
 
 function Eventdetails() {
   
@@ -23,6 +23,7 @@ function Eventdetails() {
   
   return (
     <div>
+      <Navbar />
       <CountdownTimer />
       <Dashboard3 eventData={event} />
     </div>

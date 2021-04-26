@@ -17,6 +17,6 @@ export const getDetails = () => {
   
   return fetch(`${serverURL}/my-events/`)
       .then((res) => {
-        return res.json()
+        return res.json();
       })
 }

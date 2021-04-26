@@ -9,21 +9,41 @@ $green: #067166;
   height: 35vh;
 }
 
+.event-form {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.18);
+  border-style: double #067166;
+  -moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 20px;
+-moz-border-radius-bottomright: 30px;
+-moz-border-radius-bottomleft: 0;
+
+-webkit-border-top-left-radius: 20px;
+-webkit-border-top-right-radius: 20px;
+-webkit-border-bottom-right-radius: 20px;
+-webkit-border-bottom-left-radius: 20px;
+}
+
 .form-event-header {
   text-align: center;
-  color: #067166;
+  color: #644E5D;
 }
 
 .input {
   margin-top: 1rem;
   height: 3rem;
   width: 45vh;
-  border: solid #067166;
+  border: solid #644E5D;
 }
 
 .input-date {
   margin-top: 1rem;
-  border: solid  #067166;
+  border: solid  #644E5D;
 }
 
 .form-header {
@@ -31,7 +51,7 @@ $green: #067166;
   flex-direction: column;
   margin-top: 2rem;
   font-family: 'Roboto', sans-serif;
-  color: #067166;
+  color: #644E5D
 }
 
 .form-location {
@@ -39,7 +59,7 @@ $green: #067166;
   flex-direction: column;
   margin-top: 2rem;
   font-family: 'Roboto', sans-serif;
-  color: #067166;
+  color: #644E5D
 }
 
 .form-date {
@@ -47,7 +67,7 @@ $green: #067166;
   flex-direction: column;
   margin-top: 2rem;
   font-family: 'Roboto', sans-serif;
-  color: #067166;
+  color: #644E5D;
 }
 
 .form-date-button-container {

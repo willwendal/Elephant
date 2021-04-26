@@ -1,15 +1,18 @@
 import './EventForm.scss';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { getDetails } from '../services/APIservice';
+import { useParams } from 'react';
 
 
 function EventForm({postEvent}) {
   
+  const [ event, setEvent ] = useState([]);
   const [ occasion, setOccasion ] = useState('');
   const [ location, setLocation ] = useState('');
   const [ date, setDate ] = useState('');
   
-  
+  // const { id } = useParams();
   
   const submitHandler = async (e) => {
     
@@ -23,10 +26,15 @@ function EventForm({postEvent}) {
 
 
   }
+
+  
+  //call getID function
+  //save res
+  //and pass to handleclick function
   
   const history = useHistory();
-  const handleClick = () => history.push('/Eventdetails/:id');
-  
+  const handleClick = () => history.push('/Myevents');
+
 
   function submitAndNavigate (e) {
     submitHandler(e);

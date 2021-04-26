@@ -4,6 +4,7 @@ async function getEventsInfo (req, res) {
   try {
     const events = await Events.find()
     JSON.stringify(events)
+    console.log(events)
     res.send(events)
     res.status(201)
   } catch (err) {
@@ -14,7 +15,8 @@ async function getEventsInfo (req, res) {
 
 // async function getEventsById (req, res) {
 
-//   console.log(req);
+//   console.log(req.params);
+//   console.log('in id func');
 
 //   try {
 //     const event = await Events.findById()
@@ -30,7 +32,6 @@ async function getEventsInfo (req, res) {
 async function postEventsInfo (req, res) {
   try {
     const { occasion, date, location } = req.body;
-    console.log(req.body);
     const event = await Events.create({ occasion, date, location })
     res.status(201)
     res.send(event)

@@ -13,6 +13,7 @@ $green: #067166;
 .todo-input {
   border: 1px solid $green;
   margin-left: 2rem;
+  height: 3vh;
 }
 
 .todo-button {
@@ -29,9 +30,18 @@ $green: #067166;
   text-decoration:none;
   padding: 0.5em 4em;
   margin-right: 15rem;
+  margin-top: 1rem;
 }
 
 .todo-input-button {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
+  
+}
+
+.todo-list {
+  
+  padding: 3rem;
+  
 }
