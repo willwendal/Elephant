@@ -1,6 +1,5 @@
 import './App.scss'
 import elephantLogo from './elephant-logo.jpeg';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
 
 

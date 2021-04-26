@@ -1,5 +1,6 @@
 import './EventForm.scss';
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 function EventForm({postEvent}) {
@@ -19,6 +20,17 @@ function EventForm({postEvent}) {
     setOccasion('');
     setLocation('');
     setDate('');
+
+
+  }
+  
+  const history = useHistory();
+  const handleClick = () => history.push('/Eventdetails/:id');
+  
+
+  function submitAndNavigate (e) {
+    submitHandler(e);
+    handleClick();
   }
   
   
@@ -26,7 +38,7 @@ function EventForm({postEvent}) {
   return (
     <div className="form-add-event">
   
-      <form onSubmit={ submitHandler }>
+      <form onSubmit={ submitAndNavigate }>
         <h1 className="form-event-header">Add Event</h1>
         <div className="form-header-container">
           <h3 className="form-header">
@@ -53,7 +65,7 @@ function EventForm({postEvent}) {
         </h3>
         </div>
         <div>
-          <button className="submit-button"type="submit">Submit</button>
+          <button className="submit-button"type="submit" onClick={submitAndNavigate} >Submit</button>
         </div>
       </form>
     </div>

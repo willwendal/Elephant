@@ -1,7 +1,7 @@
 const serverURL = "http://localhost:3000";
 
 export const postEventDB = (newEvent) => {
-  return fetch(serverURL + '/add-event', {
+  return fetch(`${serverURL}/add-event`, {
     method: 'POST',
     body: JSON.stringify(newEvent),
     headers: {
