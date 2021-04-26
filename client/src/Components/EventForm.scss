@@ -5,11 +5,9 @@ $green: #067166;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 2rem;
-  height: 35vh;
-}
-
-.event-form {
+  padding: 8rem;
+  height: 75vh;
+  width: 55vh;
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -28,6 +26,8 @@ $green: #067166;
 -webkit-border-bottom-right-radius: 20px;
 -webkit-border-bottom-left-radius: 20px;
 }
+
+
 
 .form-event-header {
   text-align: center;
@@ -71,6 +71,8 @@ $green: #067166;
 }
 
 .form-date-button-container {
+  display: flex;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
@@ -85,6 +87,7 @@ $green: #067166;
   text-decoration:none;
   margin-top: 3rem;
   padding: 1em 6em;
+  margin-left: 7rem;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
