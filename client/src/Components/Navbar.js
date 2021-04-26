@@ -10,9 +10,9 @@ const Navbar = () => {
         <p className='navbar-slogan'>Never Forget</p>
       </div>
       <div className='navbar-navlinks'>
-        <NavLink to='/Addevents'>Add Events</NavLink>
+        <NavLink className="nav-link" to='/Addevents'>Add Events</NavLink>
         <dt>|</dt>
-        <NavLink to='/Myevents'>My Events</NavLink>
+        <NavLink className="nav-link" to='/Myevents'>My Events</NavLink>
       </div>
     </div>
   )

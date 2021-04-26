@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .navbar-container {
   display: flex;
   align-items: center;
@@ -18,6 +20,7 @@ align-items: center;
 .navbar-slogan {
   font-family: 'Rock Salt', cursive;
   font-size: 0.8em;
+  color: #067166;
 }
 
 .navbar-navlinks {
@@ -27,7 +30,17 @@ align-items: center;
   margin-bottom: 1rem;
   width: 12rem;
   font-size: large;
-  
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
+
+.nav-link {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
+
+.nav-link:visited {
+  color: #067166;
 }
 
 

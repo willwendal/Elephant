@@ -22,8 +22,8 @@ function Todos() {
   
   return (
     <div className="todo-form">
-      <h1>Todo:</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="todo-header">Todo:</h1>
+      <form className="todo-input-button" onSubmit={handleSubmit}>
         <div className="todo-input-button">
         <input className="todo-input" type="text" onChange={handleChange} value={todo} />
         <button className="todo-button" type="submit">Add task</button>
