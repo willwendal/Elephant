@@ -37,8 +37,7 @@ function EventForm({postEvent}) {
 
 
   function submitAndNavigate (e) {
-    submitHandler(e);
-    handleClick();
+    submitHandler(e).then(() => handleClick());
   }
   
   

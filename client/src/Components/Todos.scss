@@ -20,8 +20,9 @@ $green: #067166;
 .todo-input {
   border: 1px solid #644E5D;
   margin-left: 2rem;
-  height: 3vh;
+  height: 4vh;
   width: 20rem;
+  text-indent: 10px;
 }
 
 .todo-button {
@@ -37,7 +38,7 @@ $green: #067166;
   box-sizing: border-box;
   text-decoration:none;
   padding: 0.5em 4em;
-  height: 3vh;
+  height: 4vh;
 }
 
 
@@ -50,6 +51,7 @@ $green: #067166;
 
 .todo-list-item {
   margin-top: 1em;
+  font-family: Rock salt;
 }
 
 .todo-input-button {

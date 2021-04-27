@@ -21,14 +21,32 @@ function App () {
         <img src={elephantLogo} alt='elephant logo' />
         <p className='slogan'>Never Forget</p>
       </div>
+      <h3 className="username">
+            Username:
+            <input className="input-username"/>
+          </h3>
+        
+        
+        <h3 className="password">
+          Password:
+          <input type="password" className="input-password" />
+        </h3>
+
+        <div className="register">
+          <p>
+            Not a user ? Click <span>here</span> to register 
+          </p>
+        </div>
+
       <div className='app-intro-text'>
         <p>Make sure never to miss another event, <br />
           Elephant will be here to remind you
         </p>
       </div>
+  
       <div>
         <button className='app-button' type="button" onClick={handleClick}>
-          Get Started
+          Sign in
         </button>
       </div>
     </div>

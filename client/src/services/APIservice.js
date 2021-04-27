@@ -20,3 +20,4 @@ export const getDetails = () => {
         return res.json();
       })
 }
+

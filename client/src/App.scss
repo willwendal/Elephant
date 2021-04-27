@@ -11,6 +11,7 @@ $green: #067166;
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 2rem;
  
 }
 
@@ -28,8 +29,9 @@ $green: #067166;
 
 .app-intro-text {
   font-family: 'Roboto', sans-serif;
-  margin-top: 15rem;
+  margin-top: 10rem;
   text-align: center;
+  color:#644E5D;
 }
 
 .app-button {
@@ -43,4 +45,44 @@ $green: #067166;
   text-decoration:none;
   margin-top: 3rem;
   padding: 1em 6em;
+}
+
+.username {
+  font-size: 1.2em;
+  color:#067166;
+  margin-top: 4rem;
+}
+
+.password {
+  font-size: 1.2em;
+  color:#067166;
+  margin-top: 2rem;
+}
+
+.input-username {
+  height: 1.5rem;
+  width: 30vh;
+  border: solid #644E5D;
+  display: flex;
+  justify-content: space-between;
+  text-indent: 5px;
+}
+
+.input-password {
+  height: 1.5rem;
+  width: 30vh;
+  border: solid #644E5D;
+  display: flex;
+  justify-content: space-between;
+  text-indent: 5px;
+}
+
+.register {
+  margin-top: 1em;
+  font-family: 'Roboto', sans-serif;
+  color:#644E5D;
+}
+
+span {
+  text-decoration: underline;
 }
