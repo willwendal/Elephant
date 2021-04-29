@@ -15,11 +15,28 @@ async function getEventsByUid (req, res) {
   }
 };
 
+async function addEvent (req, res) {
+  try {
+    const { occasion, date, location } = req.body;
+    const event = await Events.create({ occasion, date, location })
+    res.status(201)
+    res.send(event)
+    console.log('add event');
+    // const { occasion, date, location } = req.body;
+    // const event = await Events.create({ occasion, date, location })
+    // res.status(201)
+    // res.send(event)
+  } catch (err) {
+    res.status(400)
+    res.send(err)
+  }
+};
 
 
 async function addUser (req, res) {
   try {
-    console.log('add user');
+    console.log('add event');
+    console.log(req.params);
     // const { occasion, date, location } = req.body;
     // const event = await Events.create({ occasion, date, location })
     // res.status(201)
@@ -32,5 +49,6 @@ async function addUser (req, res) {
 
 module.exports = {
   getEventsByUid,
-  addUser
+  addUser,
+  addEvent
 }
