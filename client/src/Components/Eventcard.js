@@ -9,6 +9,10 @@ function Eventcard (props) {
   const history = useHistory();
   const handleClick = () => history.push(`/Eventdetails/${props._id}`);
 
+  function deleteButton() {
+    alert('Button works');
+  }
+
   return (
     <div className='event-card'>
       <h3 className='event-occasion'>
@@ -20,6 +24,7 @@ function Eventcard (props) {
         <button className='event-card-button' type="button" onClick={handleClick}>
           More Details
         </button>
+        <button onClick={deleteButton}>DELETE</button>
     </div>
   )
 }
