@@ -18,7 +18,7 @@ function Eventdetails() {
         
         });
       })
-  }, []) 
+  }, [id]) 
 
   
   return (
