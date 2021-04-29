@@ -1,44 +1,32 @@
-const Events = require('../models/schema')
+const Event = require ('../database/models/event.model');
 
-async function getEventsInfo (req, res) {
+async function getEventsByUid (req, res) {
   try {
-    const events = await Events.find()
-    JSON.stringify(events)
-    console.log(events)
-    res.send(events)
-    res.status(201)
+    console.log('get by id');
+    console.log(req.params);
+    // const events = await Events.find()
+    // JSON.stringify(events)
+    // console.log(events)
+    // res.send(events)
+    // res.status(201)
   } catch (err) {
     res.status(400)
     res.send(err)
   }
 };
 
-async function deleteEvent (req, res) {
-  const { id } = req.params
-  try {
-    await Events.findByIdAndRemove(id)
-    res.send('Removed')
-  }
-  catch (err) {
-    res.status(500)
-    res.send(err)
-  }
-}
 
-async function postEventsInfo (req, res) {
+
+async function addUser (req, res) {
   try {
-    const { occasion, date, location } = req.body;
-    const event = await Events.create({ occasion, date, location })
-    res.status(201)
-    res.send(event)
+    console.log('add user');
+    // const { occasion, date, location } = req.body;
+    // const event = await Events.create({ occasion, date, location })
+    // res.status(201)
+    // res.send(event)
   } catch (err) {
     res.status(400)
     res.send(err)
   }
 };
-
-module.exports = {
-  getEventsInfo,
-  deleteEvent,
-  postEventsInfo
 }
