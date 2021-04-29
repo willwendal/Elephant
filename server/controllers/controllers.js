@@ -29,4 +29,8 @@ async function addUser (req, res) {
     res.send(err)
   }
 };
+
+module.exports = {
+  getEventsByUid,
+  addUser
 }
