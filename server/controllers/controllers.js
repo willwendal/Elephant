@@ -13,21 +13,17 @@ async function getEventsInfo (req, res) {
   }
 };
 
-// async function getEventsById (req, res) {
-
-//   console.log(req.params);
-//   console.log('in id func');
-
-//   try {
-//     const event = await Events.findById()
-//     JSON.stringify(event)
-//     res.send(event)
-//     res.status(201)
-//   } catch (err) {
-//     res.status(400)
-//     res.send(err)
-//   }
-// };
+async function deleteEvent (req, res) {
+  const { id } = req.params
+  try {
+    await Events.findByIdAndRemove(id)
+    res.send('Removed')
+  }
+  catch (err) {
+    res.status(500)
+    res.send(err)
+  }
+}
 
 async function postEventsInfo (req, res) {
   try {
@@ -43,6 +39,6 @@ async function postEventsInfo (req, res) {
 
 module.exports = {
   getEventsInfo,
-  // getEventsById,
+  deleteEvent,
   postEventsInfo
 }
