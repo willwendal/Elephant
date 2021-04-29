@@ -12,5 +12,3 @@ function Dashboard ({eventData, deleteEvent}) {
 }
 
 export default Dashboard
-
-//_id={event._id} occasion={event.occasion} date={event.date}
