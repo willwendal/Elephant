@@ -30,7 +30,7 @@ function CountdownTimer () {
 
       if (distance > 0 ) {
 
-        clearInterval(interval.current);
+        clearInterval(interval);
       } else {
         
         setTimerDays(days);
@@ -45,7 +45,7 @@ function CountdownTimer () {
   useEffect(() => {
     startTimer();
     return () => {
-      clearInterval(interval.current);
+      clearInterval(interval);
     };
   });
 
