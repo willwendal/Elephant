@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 
-
 function EventForm({postEvent}) {
   
   const [ occasion, setOccasion ] = useState('');
@@ -19,14 +18,7 @@ function EventForm({postEvent}) {
     setOccasion('');
     setLocation('');
     setDate('');
-
-
   }
-
-  
-  //call getID function
-  //save res
-  //and pass to handleclick function
   
   const history = useHistory();
   const handleClick = () => history.push('/Myevents');
@@ -35,8 +27,6 @@ function EventForm({postEvent}) {
   function submitAndNavigate (e) {
     submitHandler(e).then(() => handleClick());
   }
-  
-  
   
   return (
     <div className="form-add-event">
