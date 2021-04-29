@@ -33,8 +33,8 @@ export const deleteHandler = (id) => {
 }
 
 export const getEvents = async () => {
-  const url = serverURL + '/my-events';
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
+  return fetch(`${serverURL}/my-events`)
+  .then(data=> data.json())
+  .then(events => events)
+  .catch(err => console.log(err))
 }

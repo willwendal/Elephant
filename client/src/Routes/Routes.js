@@ -3,9 +3,9 @@ import { Router, Switch, Route } from 'react-router-dom'
 
 import history from './History'
 import App from '../App'
-import Myevents from '../Pages/Myevents'
-import Addevent from '../Pages/Addevent'
-import Eventdetails from '../Pages/Eventdetails';
+import MyEvents from '../Pages/MyEvents/MyEvents.js';
+import AddEvent from '../Pages/AddEvent/AddEvent.js';
+import EventDetails from '../Pages/EventDetails';
 
 function Routes () {
 
@@ -13,9 +13,9 @@ function Routes () {
     <Router history={history}>
       <Switch>
         <Route path='/' exact component={App} />
-        <Route path='/Myevents' exact component={Myevents} />
-        <Route path='/Addevents' exact component={Addevent} />
-        <Route path='/Eventdetails/:id' exact component={Eventdetails} />
+        <Route path='/Myevents' exact component={MyEvents} />
+        <Route path='/Addevents' exact component={AddEvent} />
+        <Route path='/Eventdetails/:id' exact component={EventDetails} />
       </Switch>
     </Router>
   )
