@@ -1,4 +1,4 @@
-const Event = require ('../database/models/event.model');
+const db = require ('../database/db');
 
 async function getEventsByUid (req, res) {
   try {
@@ -18,17 +18,14 @@ async function getEventsByUid (req, res) {
 async function addEvent (req, res) {
   try {
     const { occasion, date, location } = req.body;
-    const event = await Events.create({ occasion, date, location })
-    res.status(201)
-    res.send(event)
-    console.log('add event');
-    // const { occasion, date, location } = req.body;
-    // const event = await Events.create({ occasion, date, location })
-    // res.status(201)
-    // res.send(event)
+    await db.events.sync();
+    const newEvent = await db.events.create({ occasion, date, location });
+    res.status(201);
+    res.send(newEvent);
   } catch (err) {
-    res.status(400)
-    res.send(err)
+    console.log(err);
+    res.status(400);
+    res.send(err);
   }
 };
 

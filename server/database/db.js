@@ -10,7 +10,12 @@ const fs = require('fs');
 const path = require('path')
 const Sequelize = require('sequelize');
 
-let reqPath = path.join(__dirname, '../database/schemas');
+let reqPath = path.join(__dirname, './models');
+
+console.log('dirname');
+console.log(__dirname);
+console.log('path');
+console.log(reqPath);
 
 const config = {
   host: 'localhost',
