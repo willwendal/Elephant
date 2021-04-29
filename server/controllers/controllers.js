@@ -1,40 +1,41 @@
-const Events = require('../models/schema')
+const Event = require ('../database/models/event.model');
 
-async function getEventsInfo (req, res) {
+async function getEventsByUid (req, res) {
   try {
-    const events = await Events.find()
-    JSON.stringify(events)
-    console.log(events)
-    res.send(events)
-    res.status(201)
+    console.log('get by id');
+    console.log(req.params);
+    // const events = await Events.find()
+    // JSON.stringify(events)
+    // console.log(events)
+    // res.send(events)
+    // res.status(201)
   } catch (err) {
     res.status(400)
     res.send(err)
   }
 };
 
-// async function getEventsById (req, res) {
-
-//   console.log(req.params);
-//   console.log('in id func');
-
-//   try {
-//     const event = await Events.findById()
-//     JSON.stringify(event)
-//     res.send(event)
-//     res.status(201)
-//   } catch (err) {
-//     res.status(400)
-//     res.send(err)
-//   }
-// };
-
-async function postEventsInfo (req, res) {
+async function addEvent (req, res) {
   try {
-    const { occasion, date, location } = req.body;
-    const event = await Events.create({ occasion, date, location })
-    res.status(201)
-    res.send(event)
+    console.log('add event');
+    console.log(req.params);
+    // const { occasion, date, location } = req.body;
+    // const event = await Events.create({ occasion, date, location })
+    // res.status(201)
+    // res.send(event)
+  } catch (err) {
+    res.status(400)
+    res.send(err)
+  }
+};
+
+async function addUser (req, res) {
+  try {
+    console.log('add user');
+    // const { occasion, date, location } = req.body;
+    // const event = await Events.create({ occasion, date, location })
+    // res.status(201)
+    // res.send(event)
   } catch (err) {
     res.status(400)
     res.send(err)
@@ -42,7 +43,7 @@ async function postEventsInfo (req, res) {
 };
 
 module.exports = {
-  getEventsInfo,
-  // getEventsById,
-  postEventsInfo
+  getEventsByUid,
+  addEvent,
+  addUser
 }
