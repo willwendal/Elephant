@@ -1,19 +1,15 @@
 import './EventForm.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { getDetails } from '../services/APIservice';
 
 
 
 function EventForm({postEvent}) {
   
-  const [ event, setEvent ] = useState([]);
   const [ occasion, setOccasion ] = useState('');
   const [ location, setLocation ] = useState('');
   const [ date, setDate ] = useState('');
-  
-  // const { id } = useParams();
-  
+
   const submitHandler = async (e) => {
     
     e.preventDefault();
