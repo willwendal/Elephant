@@ -14,7 +14,6 @@ function Dashboard2 () {
         return res.json()
       })
       .then((data) => {
-        console.log(data);
         setEvent(data)
       })
   }, []) 

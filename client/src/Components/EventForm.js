@@ -2,7 +2,6 @@ import './EventForm.scss';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-
 function EventForm({postEvent}) {
   
   const [ occasion, setOccasion ] = useState('');
@@ -34,12 +33,12 @@ function EventForm({postEvent}) {
       <form onSubmit={ submitAndNavigate }>
         <h1 className="form-event-header">Add Event</h1>
         
-          <h3 className="form-header">
-            Occasion
-            <input className="input" onChange={(e) => {setOccasion(e.target.value)}} 
-            value={occasion} 
-            type="text"/>
-          </h3>
+        <h3 className="form-header">
+          Occasion
+          <input className="input" onChange={(e) => {setOccasion(e.target.value)}} 
+          value={occasion} 
+          type="text"/>
+        </h3>
         
         
         <h3 className="form-location">
