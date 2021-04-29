@@ -1,19 +1,14 @@
 import './EventForm.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { getDetails } from '../services/APIservice';
-
 
 
 function EventForm({postEvent}) {
   
-  const [ event, setEvent ] = useState([]);
   const [ occasion, setOccasion ] = useState('');
   const [ location, setLocation ] = useState('');
   const [ date, setDate ] = useState('');
-  
-  // const { id } = useParams();
-  
+
   const submitHandler = async (e) => {
     
     e.preventDefault();
@@ -23,14 +18,7 @@ function EventForm({postEvent}) {
     setOccasion('');
     setLocation('');
     setDate('');
-
-
   }
-
-  
-  //call getID function
-  //save res
-  //and pass to handleclick function
   
   const history = useHistory();
   const handleClick = () => history.push('/Myevents');
@@ -39,8 +27,6 @@ function EventForm({postEvent}) {
   function submitAndNavigate (e) {
     submitHandler(e).then(() => handleClick());
   }
-  
-  
   
   return (
     <div className="form-add-event">

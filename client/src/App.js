@@ -4,13 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 
 function App () {
-  // useState isLoggedIn = false
-  // {
-  //   isLoggedIn ?
-  //   <Switch>
-  //   : <LoginPage>
-  // }
-
+  
   const history = useHistory();
   const handleClick = () => history.push('/Myevents');
 

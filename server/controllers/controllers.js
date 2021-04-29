@@ -15,19 +15,7 @@ async function getEventsByUid (req, res) {
   }
 };
 
-async function addEvent (req, res) {
-  try {
-    console.log('add event');
-    console.log(req.params);
-    // const { occasion, date, location } = req.body;
-    // const event = await Events.create({ occasion, date, location })
-    // res.status(201)
-    // res.send(event)
-  } catch (err) {
-    res.status(400)
-    res.send(err)
-  }
-};
+
 
 async function addUser (req, res) {
   try {
@@ -41,9 +29,4 @@ async function addUser (req, res) {
     res.send(err)
   }
 };
-
-module.exports = {
-  getEventsByUid,
-  addEvent,
-  addUser
 }

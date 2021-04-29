@@ -1,25 +1,29 @@
 import Navbar from '../Components/Navbar'
 import Dashboard from '../Components/Dashboard'
 import { useEffect, useState } from 'react'
+import { deleteHandler, getEvents } from '../services/APIservice'
 
 function Myevents () {
-  const [event, setEvent] = useState([])
+
+  const [eventData, setEvent] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/my-events')
-      .then((res) => {
-        return res.json()
-      })
-      .then((data) => {
-        setEvent(data)
-      })
+    async function fetchData () {
+      const data = await getEvents();
+      setEvent(data)
+      }
+      fetchData()
   }, []) 
 
+  const deleteEvent = async (id) => {
+    await deleteHandler(id);
+    setEvent(previousEvent => previousEvent.filter(event => event._id !== id))
+  }
 
   return (
     <div>
       <Navbar />
-      <Dashboard eventData={event} />
+      <Dashboard eventData={eventData} deleteEvent={deleteEvent}/>
     </div>
   )
 }
