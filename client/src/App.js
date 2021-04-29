@@ -1,5 +1,5 @@
 import './App.scss'
-import elephantLogo from './elephant-logo.jpeg';
+import elephantLogo from './assets/elephant-logo.jpeg';
 import { useHistory } from 'react-router-dom';
 
 

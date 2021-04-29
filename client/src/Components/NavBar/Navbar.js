@@ -1,5 +1,5 @@
 import './Navbar.scss'
-import navbarElephantLogo from '../Navbar-elephant-logo.jpg'
+import navbarElephantLogo from '../../assets/Navbar-elephant-logo.jpg';
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {

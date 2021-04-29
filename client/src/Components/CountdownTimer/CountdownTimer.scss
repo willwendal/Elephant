@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .timer-container {
-  background-image: url('../alarm-clock.jpg');
+  background-image: url('../../assets/alarm-clock.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  // width: 100vw;
   height: 60vh;
   border-bottom: solid 3px black;
 }

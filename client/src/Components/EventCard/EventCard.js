@@ -1,4 +1,4 @@
-import './Eventcard.scss'
+import './EventCard.scss'
 import { useHistory } from 'react-router-dom';
 import moment from 'moment';
 

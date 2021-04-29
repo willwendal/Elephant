@@ -1,7 +1,7 @@
 import './AddEvent.scss';
 import { useState } from 'react';
-import Navbar from '../../Components/Navbar';
-import EventForm from '../../Components/EventForm';
+import Navbar from '../../Components/NavBar/Navbar';
+import EventForm from '../../Components/EventForm/EventForm';
 import { postEventDB } from '../../services/APIservice';
 
 

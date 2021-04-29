@@ -2,7 +2,7 @@ import './Todos.scss';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { addTodo, completed } from '../actions';
+import { addTodo, completed } from '../../redux/actions';
 
 function Todos() {
   
