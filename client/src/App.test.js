@@ -1,12 +1,23 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import { useHistory } from 'react-router-dom';
 import App from './App';
+
+
+const mockHistoryPush  = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: () => ({
+    push: mockHistoryPush ,
+  }),
+}));
 
 beforeEach(() => {
   render(<App />);
 });
-
 
 describe('App rendering', () => {
   test('Renders username input field', () => {
@@ -37,7 +48,7 @@ describe('User types into input fields', () => {
 });
 
 describe('Actions when clicking the sign in button', () => {
-  test('If any of the input fields is empty, page should not redirect on click', () => {
+  test('If any of the input fields are empty, page should not redirect on click', () => {
     const buttonElement = screen.getByText('Sign in');
     const userInputField = screen.getByTestId('usernameInput');
     const passwordInputField = screen.getByTestId('passwordInput');
@@ -48,7 +59,20 @@ describe('Actions when clicking the sign in button', () => {
     expect(passwordInputField).toBeInTheDocument();
     expect(userInputField).toBeInTheDocument();
   });
-})
+  test('Redirect to my events when authenticated', async () => {
+    const buttonElement = screen.getByText('Sign in');
+    const userInputField = screen.getByTestId('usernameInput');
+    const passwordInputField = screen.getByTestId('passwordInput');
+    userEvent.type(userInputField, 'testUsername');
+    userEvent.type(passwordInputField, 'testPassword');
+    expect(passwordInputField).toHaveValue('testPassword');
+    expect(userInputField).toHaveValue('testUsername');
+    expect(passwordInputField).toHaveValue('testPassword');
+    userEvent.click(buttonElement);
+    expect(mockHistoryPush).toHaveBeenCalledWith('/Myevents');
+  });
+  
+});
 
 
 
