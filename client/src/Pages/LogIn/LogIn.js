@@ -6,7 +6,10 @@ import { useHistory } from 'react-router-dom';
 function LogIn () {
   
   const history = useHistory();
-  const handleClick = () => history.push('/Myevents');
+
+  function handleClick() {
+    history.push('/Myevents');
+  }
 
   return (
 
@@ -17,13 +20,13 @@ function LogIn () {
       </div>
       <h3 className="username">
             Username:
-            <input className="input-username" data-testid="usernameInput"/>
+            <input data-testid= 'usernameInput' className="input-username"/>
           </h3>
         
         
         <h3 className="password">
           Password:
-          <input type="password" className="input-password" data-testid="passwordInput"/>
+          <input data-testid= 'passwordInput' type="password" className="input-password" />
         </h3>
 
         <div className="register">
