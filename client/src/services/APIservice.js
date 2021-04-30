@@ -1,5 +1,6 @@
-const serverURL = "http://localhost:3000";
-const URL = "http://localhost:3000/my-events"
+const serverURL = "http://localhost:3005";
+const URL = "http://localhost:30005/my-events"
+
 
 
 
@@ -25,8 +26,7 @@ export const getDetails = () => {
 }
 
 export const deleteHandler = (id) => {
-  console.log(id)
-  const deleting = fetch(`${URL}/${id}`, {
+  const deleting = fetch(`${serverURL}/delete/${id}`, {
     method: 'DELETE'
   });
   return deleting;

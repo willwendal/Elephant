@@ -15,10 +15,10 @@ let reqPath = path.join(__dirname, './models');
 const config = {
   host: 'localhost',
   dialect: 'postgres',
-  port:'3000'
+  port:'5432'
 }
 
-const sequelize = new Sequelize('elephant', 'postgres', '123456', config);
+const sequelize = new Sequelize('elephant', 'jonasp', 'tiesiogbicas', config);
 db = {};
 
 const files = fs.readdirSync(reqPath);
