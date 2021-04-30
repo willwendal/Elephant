@@ -17,13 +17,13 @@ function LogIn () {
       </div>
       <h3 className="username">
             Username:
-            <input className="input-username"/>
+            <input className="input-username" data-testid="usernameInput"/>
           </h3>
         
         
         <h3 className="password">
           Password:
-          <input type="password" className="input-password" />
+          <input type="password" className="input-password" data-testid="passwordInput"/>
         </h3>
 
         <div className="register">
