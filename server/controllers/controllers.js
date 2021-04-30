@@ -18,8 +18,11 @@ async function getEventsByUid (req, res) {
 async function addEvent (req, res) {
   try {
     const { occasion, date, location } = req.body;
-    await db.events.sync();
-    const newEvent = await db.events.create({ occasion, date, location });
+    // console.log(occasion);
+    // console.log(date);
+    // console.log(location);
+    // await db.events.sync();
+    // const newEvent = await db.events.create({ occasion, date, location });
     res.status(201);
     res.send(newEvent);
   } catch (err) {

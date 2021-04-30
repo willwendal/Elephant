@@ -12,11 +12,6 @@ const Sequelize = require('sequelize');
 
 let reqPath = path.join(__dirname, './models');
 
-console.log('dirname');
-console.log(__dirname);
-console.log('path');
-console.log(reqPath);
-
 const config = {
   host: 'localhost',
   dialect: 'postgres',
