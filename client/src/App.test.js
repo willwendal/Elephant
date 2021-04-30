@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
@@ -6,9 +7,10 @@ beforeEach(() => {
   render(<App />);
 });
 
+
 describe('App rendering', () => {
   test('Renders username input field', () => {
-    const userInputField = screen.getByTestId('usernameInput');
+    const userInputField = screen.getByTestId('passwordInput');
     expect(userInputField).toBeInTheDocument();
   });
   test('Renders password input field', () => {
