@@ -71,6 +71,7 @@ describe('Actions when clicking the sign in button', () => {
     userEvent.click(buttonElement);
     expect(mockHistoryPush).toHaveBeenCalledWith('/Myevents');
   });
+  
 });
 
 
