@@ -13,7 +13,7 @@ function EventForm({postEvent}) {
   async function submitAndNavigate (e) {
     e.preventDefault();
     if (occasion !== '' && location !== '' && date !== '') {
-      await postEvent({occasion, location, date})
+      await postEvent({occasion, location, date});
       setOccasion('');
       setLocation('');
       setDate('');
@@ -66,7 +66,7 @@ function EventForm({postEvent}) {
         </h3>
         
         <div>
-          <button data-testid="submit" className="submit-button"type="submit" onClick={submitAndNavigate} >Submit</button>
+          <button data-testid="submitButton" className="submit-button" type="submit">Submit</button>
         </div>
       </form>
     </div>

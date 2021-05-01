@@ -53,9 +53,7 @@ describe('Actions when clicking the sign in button', () => {
     expect(userInputField).toHaveValue('');
     expect(passwordInputField).toHaveValue('');
     userEvent.click(buttonElement);
-    expect(buttonElement).toBeInTheDocument();
-    expect(passwordInputField).toBeInTheDocument();
-    expect(userInputField).toBeInTheDocument();
+    expect(mockHistoryPush).not.toHaveBeenCalledWith('/Myevents');
   });
   test('Redirect to my events when authenticated', () => {
     const buttonElement = screen.getByText('Sign in');
