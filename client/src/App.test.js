@@ -1,8 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import { useHistory } from 'react-router-dom';
 import App from './App';
 
 
@@ -34,7 +32,7 @@ describe('App rendering', () => {
   });
 });
 
-describe('User types into input fields', () => {
+describe('Input fields take a user input', () => {
   test('Types inside the username input fields', () => {
     const userInputField = screen.getByTestId('usernameInput');
     userEvent.type(userInputField, 'testUsername');
@@ -59,7 +57,7 @@ describe('Actions when clicking the sign in button', () => {
     expect(passwordInputField).toBeInTheDocument();
     expect(userInputField).toBeInTheDocument();
   });
-  test('Redirect to my events when authenticated', async () => {
+  test('Redirect to my events when authenticated', () => {
     const buttonElement = screen.getByText('Sign in');
     const userInputField = screen.getByTestId('usernameInput');
     const passwordInputField = screen.getByTestId('passwordInput');
@@ -67,11 +65,9 @@ describe('Actions when clicking the sign in button', () => {
     userEvent.type(passwordInputField, 'testPassword');
     expect(passwordInputField).toHaveValue('testPassword');
     expect(userInputField).toHaveValue('testUsername');
-    expect(passwordInputField).toHaveValue('testPassword');
     userEvent.click(buttonElement);
     expect(mockHistoryPush).toHaveBeenCalledWith('/Myevents');
   });
-  
 });
 
 
