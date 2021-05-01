@@ -1,4 +1,8 @@
-const serverURL = "http://localhost:3000";
+const serverURL = "http://localhost:3005";
+const URL = "http://localhost:30005/my-events"
+
+
+
 
 export const postEventDB = (newEvent) => {
   return fetch(`${serverURL}/add-event`, {
@@ -21,3 +25,16 @@ export const getDetails = () => {
       })
 }
 
+export const deleteHandler = (id) => {
+  const deleting = fetch(`${serverURL}/delete/${id}`, {
+    method: 'DELETE'
+  });
+  return deleting;
+}
+
+export const getEvents = async () => {
+  return fetch(`${serverURL}/my-events`)
+  .then(data=> data.json())
+  .then(events => events)
+  .catch(err => console.log(err))
+}

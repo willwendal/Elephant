@@ -1,19 +1,13 @@
 import './EventForm.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { getDetails } from '../services/APIservice';
-
-
 
 function EventForm({postEvent}) {
   
-  const [ event, setEvent ] = useState([]);
   const [ occasion, setOccasion ] = useState('');
   const [ location, setLocation ] = useState('');
   const [ date, setDate ] = useState('');
-  
-  // const { id } = useParams();
-  
+
   const submitHandler = async (e) => {
     
     e.preventDefault();
@@ -23,14 +17,7 @@ function EventForm({postEvent}) {
     setOccasion('');
     setLocation('');
     setDate('');
-
-
   }
-
-  
-  //call getID function
-  //save res
-  //and pass to handleclick function
   
   const history = useHistory();
   const handleClick = () => history.push('/Myevents');
@@ -40,20 +27,18 @@ function EventForm({postEvent}) {
     submitHandler(e).then(() => handleClick());
   }
   
-  
-  
   return (
     <div className="form-add-event">
   
       <form onSubmit={ submitAndNavigate }>
         <h1 className="form-event-header">Add Event</h1>
         
-          <h3 className="form-header">
-            Occasion
-            <input className="input" onChange={(e) => {setOccasion(e.target.value)}} 
-            value={occasion} 
-            type="text"/>
-          </h3>
+        <h3 className="form-header">
+          Occasion
+          <input className="input" onChange={(e) => {setOccasion(e.target.value)}} 
+          value={occasion} 
+          type="text"/>
+        </h3>
         
         
         <h3 className="form-location">
