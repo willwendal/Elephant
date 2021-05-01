@@ -7,12 +7,12 @@ const Navbar = () => {
     <div className='navbar-container'>
       <div className='navbar-logo-slogan-container'>
         <img src={navbarElephantLogo} alt='elephant logo' />
-        <p className='navbar-slogan'>Never Forget</p>
+        <p data-testid="PARA" className='navbar-slogan'>Never Forget</p>
       </div>
       <div className='navbar-navlinks'>
-        <NavLink className="nav-link" to='/Addevents'>Add Events</NavLink>
+        <NavLink data-testid="addEvents" className="nav-link" to='/Addevents'>Add Events</NavLink>
         <dt>|</dt>
-        <NavLink className="nav-link" to='/Myevents'>My Events</NavLink>
+        <NavLink data-testid="myEvents" className="nav-link" to='/Myevents'>My Events</NavLink>
       </div>
     </div>
   )
