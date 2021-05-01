@@ -10,7 +10,8 @@ const event = {
   _id: "18"
 }
 
-const mockHandleClick = jest.fn()
+const mockHandleClick = jest.fn();
+const deleteEvent = jest.fn();
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -20,7 +21,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 beforeEach(() => {
-  render(<EventCard  event={event} />);
+  render(<EventCard  event={event} deleteEvent={deleteEvent}/>);
 })
 
 describe('Button rendering', () => {
@@ -41,6 +42,13 @@ describe('Redirect on click to More Details', () => {
     userEvent.click(buttonMoreDetails)
     expect(mockHandleClick).toHaveBeenCalledWith(`/Eventdetails/${event._id}`);
   });
+});
+describe('Deletes Event on click', () => {
+  test('Should fire the delete button', async () => {
+    const deleteButton = screen.getByTestId('deleteButton');
+    await userEvent.click(deleteButton);
+    expect(deleteEvent).toHaveBeenCalledWith(event._id)
+  })
 });
 
 

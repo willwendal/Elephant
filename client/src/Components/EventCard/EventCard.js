@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import moment from 'moment';
 
 function Eventcard ({event, deleteEvent}) {
+  // console.log(deleteEvent)
 
   const formatDate = moment(event.date).format('MMMM Do YYYY');
 
