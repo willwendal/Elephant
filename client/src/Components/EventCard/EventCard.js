@@ -17,10 +17,10 @@ function Eventcard ({event, deleteEvent}) {
       <p className='event-date'>
         {formatDate}
       </p>
-        <button className='event-card-button' type="button" onClick={handleClick}>
+        <button data-testid="moreDetailsButton" className='event-card-button' type="button" onClick={handleClick}>
           More Details
         </button>
-        <button type="button" onClick={() => deleteEvent(event._id)}>DELETE</button>
+        <button data-testid="deleteButton" type="button" onClick={() => deleteEvent(event._id)}>DELETE</button>
     </div>
   )
 }

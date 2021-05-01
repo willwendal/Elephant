@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "moment": "^2.29.1",
     "node-sass": "^5.0.0",

@@ -6,7 +6,7 @@ import './MyEvents.scss';
 
 function MyEvents () {
 
-  const [eventData, setEvent] = useState([{id: 5}])
+  const [eventData, setEvent] = useState([])
 
   useEffect(() => {
     async function fetchData () {
@@ -23,7 +23,7 @@ function MyEvents () {
 
     const eventList = eventData.map((event) => {
       return (
-        <EventCard key={event._id} event={event}   deleteEvent={deleteEvent} />
+        <EventCard key={event._id} event={event} deleteEvent={deleteEvent} />
         )
     });
 
