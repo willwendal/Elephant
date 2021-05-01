@@ -19,6 +19,20 @@ function Todos() {
   };
 
   const handleChange = ({ target }) => setTodo(target.value);
+
+  const todoList = todos.map((todo) => {
+    return (
+      <li className="todo-list-item"
+        style={{
+          textDecoration: todo.completed ? 'line-through' : 'none',
+        }}
+        key={todo.id}
+        onClick={() => dispatch(completed(todo.id))}
+      >
+      {todo.text}
+      </li>
+    )}
+  );
   
   return (
     <div className="todo-form-container">
@@ -33,18 +47,8 @@ function Todos() {
       </div>
       <div className="todo-list"> 
         <ul>
-        {todos.map(todo => (
-          <li className="todo-list-item"
-            style={{
-              textDecoration: todo.completed ? 'line-through' : 'none',
-            }}
-          key={todo.id}
-          onClick={() => dispatch(completed(todo.id))}
-        >
-          {todo.text}
-        </li>
-      ))}
-    </ul>
+          {todoList}
+        </ul>
   </div>
   </div>
   );
