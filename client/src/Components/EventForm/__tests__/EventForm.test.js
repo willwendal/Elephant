@@ -5,17 +5,17 @@ import EventForm from '../EventForm';
 
 const promise = Promise.resolve();
 const postMock = jest.fn(() => promise);
-const mockHistoryPush  = jest.fn();
+const mockHistoryPush = jest.fn();
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useHistory: () => ({
-    push: mockHistoryPush ,
-  }),
+    push: mockHistoryPush
+  })
 }));
 
 beforeEach(() => {
-  render(<EventForm postEvent={postMock}/>);
+  render(<EventForm postEvent={postMock} />);
 });
 
 describe('Event form elements rendering', () => {
@@ -53,7 +53,6 @@ describe('Input fields take a user input', () => {
 });
 
 describe('Actions when submitting the form', () => {
-
   test('Form does not redirect when any of the fields are empty', () => {
     const submit = screen.getByTestId('submitButton');
     const occasionInputField = screen.getByTestId('occasion');

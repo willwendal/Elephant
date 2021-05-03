@@ -1,11 +1,10 @@
 import './Todos.scss';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { addTodo, completed } from '../../redux/actions';
 
-function Todos() {
-  
+function Todos () {
   const [todo, setTodo] = useState('');
 
   const todos = useSelector(state => state.todos);
@@ -13,41 +12,42 @@ function Todos() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    //fetch to backend
+    // fetch to backend
     dispatch(addTodo(todo));
     setTodo('');
   };
 
   const handleChange = ({ target }) => setTodo(target.value);
-  
+
   return (
-    <div className="todo-form-container">
-      <div className="todo-form">
-        <h1 className="todo-header">Todo:</h1>
-        <form className="todo-input-button" onSubmit={handleSubmit}>
-          <div className="todo-input-button">
-            <input className="todo-input" type="text" onChange={handleChange} value={todo} />
-            <button className="todo-button" type="submit">Add task</button>
+    <div className='todo-form-container'>
+      <div className='todo-form'>
+        <h1 className='todo-header'>Todo:</h1>
+        <form className='todo-input-button' onSubmit={handleSubmit}>
+          <div className='todo-input-button'>
+            <input className='todo-input' type='text' onChange={handleChange} value={todo} />
+            <button className='todo-button' type='submit'>Add task</button>
           </div>
         </form>
       </div>
-      <div className="todo-list"> 
+      <div className='todo-list'>
         <ul>
-        {todos.map(todo => (
-          <li className="todo-list-item"
-            style={{
-              textDecoration: todo.completed ? 'line-through' : 'none',
-            }}
-          key={todo.id}
-          onClick={() => dispatch(completed(todo.id))}
-        >
-          {todo.text}
-        </li>
-      ))}
-    </ul>
-  </div>
-  </div>
+          {todos.map(todo => (
+            <li
+              className='todo-list-item'
+              style={{
+                textDecoration: todo.completed ? 'line-through' : 'none'
+              }}
+              key={todo.id}
+              onClick={() => dispatch(completed(todo.id))}
+            >
+              {todo.text}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
-};
+}
 
-export default Todos
+export default Todos;

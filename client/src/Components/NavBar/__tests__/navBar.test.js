@@ -6,12 +6,13 @@ import { createMemoryHistory } from 'history';
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from "react-router-dom";
 
+
 describe('NavBar Rendering', () => {
   test('Rendering Add Events navigation link', () => {
     const history = createMemoryHistory();
     render(
       <Router history={history}>
-        <Navbar/>
+        <Navbar />
       </Router>
     )
     const addEvents = screen.getByTestId('addEvents')
@@ -21,7 +22,7 @@ describe('NavBar Rendering', () => {
     const history = createMemoryHistory();
     render(
       <Router history={history}>
-        <Navbar/>
+        <Navbar />
       </Router>
     )
     const myEvents = screen.getByTestId('myEvents');

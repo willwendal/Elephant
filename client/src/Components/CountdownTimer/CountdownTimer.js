@@ -1,8 +1,7 @@
-import './CountdownTimer.scss'
+import './CountdownTimer.scss';
 import { useEffect, useState, useRef } from 'react';
 
 function CountdownTimer () {
-
   const [timerDays, setTimerDays] = useState('00');
   const [timerHours, setTimerHours] = useState('00');
   const [timerMinutes, setTimerMinutes] = useState('00');
@@ -26,17 +25,14 @@ function CountdownTimer () {
       const secondsNegative = Math.floor((distance % (1000 * 60)) / 1000);
       const seconds = Math.abs(secondsNegative);
 
-      if (distance > 0 ) {
-
+      if (distance > 0) {
         clearInterval(interval);
       } else {
-        
         setTimerDays(days);
         setTimerHours(hours);
         setTimerMinutes(minutes);
         setTimerSeconds(seconds);
       }
-
     }, 1000);
   };
 
@@ -52,25 +48,25 @@ function CountdownTimer () {
       <section className='timer'>
         <div className='timer-first-div'>
           <span className='calendar-clock-timer-icon' />
-          <h2 className="timer-header">Countdown Timer</h2>
-          <p className="timer-header">Tick Tock</p>
+          <h2 className='timer-header'>Countdown Timer</h2>
+          <p className='timer-header'>Tick Tock</p>
         </div>
         <div className='timer-last-div'>
           <section>
             <p>{timerDays}</p>
             <p><small>Days</small></p>
           </section>
-          <span className="timer-colon">:</span>
+          <span className='timer-colon'>:</span>
           <section>
             <p>{timerHours}</p>
             <p><small>Hours</small></p>
           </section>
-          <span className="timer-colon">:</span>
+          <span className='timer-colon'>:</span>
           <section>
             <p>{timerMinutes}</p>
             <p><small>Minutes</small></p>
           </section>
-          <span className="timer-colon">:</span>
+          <span className='timer-colon'>:</span>
           <section>
             <p>{timerSeconds}</p>
             <p><small>Seconds</small></p>
@@ -78,7 +74,7 @@ function CountdownTimer () {
         </div>
       </section>
     </section>
-  )
+  );
 }
 
-export default CountdownTimer
+export default CountdownTimer;
