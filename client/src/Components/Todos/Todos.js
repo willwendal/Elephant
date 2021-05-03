@@ -1,11 +1,10 @@
 import './Todos.scss';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { addTodo, completed } from '../../redux/actions';
 
-function Todos() {
-  
+function Todos () {
   const [todo, setTodo] = useState('');
 
   const todos = useSelector(state => state.todos);
@@ -13,12 +12,13 @@ function Todos() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('________________________________ fire ?????  __________________________________');
+
     if (todo !== '') {
-      console.log('________________________________ fired __________________________________');
       dispatch(addTodo(todo));
       setTodo('');
     }
+
+
   };
 
   const handleChange = ({ target }) => setTodo(target.value);
@@ -45,16 +45,18 @@ function Todos() {
           <div className="todo-input-button">
             <input data-testid="inputField" className="todo-input" type="text" onChange={handleChange} value={todo} />
             <button data-testid="todoSubmit" className="todo-button" type="submit">Add task</button>
+
           </div>
         </form>
       </div>
-      <div className="todo-list"> 
+      <div className='todo-list'>
         <ul>
+
           {todoList}
         </ul>
   </div>
   </div>
   );
-};
+}
 
-export default Todos
+export default Todos;

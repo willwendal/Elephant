@@ -3,14 +3,13 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
-
-const mockHistoryPush  = jest.fn();
+const mockHistoryPush = jest.fn();
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useHistory: () => ({
-    push: mockHistoryPush ,
-  }),
+    push: mockHistoryPush
+  })
 }));
 
 beforeEach(() => {
@@ -67,6 +66,3 @@ describe('Actions when clicking the sign in button', () => {
     expect(mockHistoryPush).toHaveBeenCalledWith('/Myevents');
   });
 });
-
-
-
