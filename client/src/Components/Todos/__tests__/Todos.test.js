@@ -1,23 +1,51 @@
 import React from 'react';
-import { Provider } from 'react-redux'
-import { act, render, screen } from '@testing-library/react';
-import * as reactRedux from 'react-redux'
+import { act, render, screen, fireEvent, cleanup } from '@testing-library/react';
+import * as reactRedux from 'react-redux';
 import userEvent from '@testing-library/user-event';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { addTodo } from '../../../reducers';
 import Todos from '../Todos';
-import { addTodo, completed } from '../../../redux/actions';
+
+const addTodoMock = jest.fn();
 
 describe('todos testing', () => {
+  
   const useSelectorMock = jest.spyOn(reactRedux, 'useSelector');
   const useDispatchMock = jest.spyOn(reactRedux, 'useDispatch');
 
   beforeEach(() => {
-    useSelectorMock.mockClear();
-    useDispatchMock.mockClear();
     useSelectorMock.mockReturnValue([{id: 1, text: 'test', completed: false}]);
-    useDispatchMock.mock();
-    // [{id: 1, text: 'test', completed: false}]
     render(<Todos />);
+    // renderWithRedux(<Todos />, []);
   });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+    cleanup();
+  });
+
+  // const startingState = [];
+  // function reducer(state = startingState, action) {
+  //   switch (action.type) {
+  //     case 'ADD_TODO':
+  //       const id = nextId;
+  //       nextId++;
+  //       const { text } = action;
+  //       return [{ id, text, completed: false }].concat(state);
+  //     default: 
+  //       return state;
+  //   }
+  // }
+
+  function renderWithRedux(
+    component, 
+    { initialState, store = createStore(reducer, initialState) }) {
+      return {
+        ...render(<Provider store={store}>{component}</Provider>)
+      }
+  }
+
   describe('Input field', () => {
     test('Input field renders correctly', () => {
       const inputField = screen.getByTestId('inputField');
@@ -35,23 +63,22 @@ describe('todos testing', () => {
       const submit = screen.getByTestId('todoSubmit');
       expect(submit).toBeInTheDocument();
     });
-    test('Submit button does not fire dispatch when input empty', () => {
-      const inputField = screen.getByTestId('inputField');
-      const submit = screen.getByTestId('todoSubmit');
-      userEvent.type(inputField, '');
-      userEvent.click(submit);
-      expect(useDispatchMock).toHaveBeenCalled();
-
-    });
-    test('Submit button dispatches to redux when input filled out', () => {
-      
-    })
+    // test('Submit button does not fire dispatch when input empty', async () => {
+    //   const inputField = screen.getByTestId('inputField');
+    //   const submit = screen.getByTestId('todoSubmit');
+    //   userEvent.click(submit);
+    //   expect(addTodoMock).not.toHaveBeenCalled();
+    //   console.log(store);
+    // });
+    // test('Submit button fires dispatch when input filled out', async () => {
+    //   const inputField = screen.getByTestId('inputField');
+    //   const submit = screen.getByTestId('todoSubmit');
+    //   userEvent.type(inputField, 'test todo');
+    //   console.log('_____________________________________________ before _____________________________________');
+    //   userEvent.click(submit);
+    //   expect(useDispatchMock).toHaveBeenCalled();
+    // });
   })
-  
-  describe('redux', () => {
-    test('useSelector fired on render', () => {
-      expect(useDispatchMock).toHaveBeenCalled();
-    });
-  });
+
 
 })
