@@ -7,26 +7,26 @@ import userEvent from '@testing-library/user-event'
 
 describe('NavBar Rendering', () => {
   test('Rendering Add Events navigation link', () => {
-    const history = createMemoryHistory();
+    const history = createMemoryHistory()
     render(
       <Router history={history}>
-        <Navbar/>
+        <Navbar />
       </Router>
     )
     const smth = screen.getByTestId('addEvents')
     expect(smth).toBeInTheDocument()
-  });
+  })
   test('Rendering My Events navigation link', () => {
-    const history = createMemoryHistory();
+    const history = createMemoryHistory()
     render(
       <Router history={history}>
-        <Navbar/>
+        <Navbar />
       </Router>
     )
     const smth = screen.getByTestId('myEvents')
     expect(smth).toBeInTheDocument()
-  });
-});
+  })
+})
 
 // test('salal', () => {
 //   const history = createMemoryHistory()
@@ -39,4 +39,3 @@ describe('NavBar Rendering', () => {
 //   const addevent = screen.getByText('Add Events');
 //   userEvent.click(screen.getByText('Add Events'))
 // })
-

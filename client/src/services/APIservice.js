@@ -1,15 +1,12 @@
-const serverURL = "http://localhost:3005";
-const URL = "http://localhost:30005/my-events"
-
-
-
+const serverURL = 'http://localhost:3005'
+const URL = 'http://localhost:30005/my-events'
 
 export const postEventDB = (newEvent) => {
   return fetch(`${serverURL}/add-event`, {
     method: 'POST',
     body: JSON.stringify(newEvent),
     headers: {
-      "Content-Type": 'application/json'
+      'Content-Type': 'application/json'
     }
   })
     .then(data => data.json())
@@ -18,23 +15,22 @@ export const postEventDB = (newEvent) => {
 }
 
 export const getDetails = () => {
-  
   return fetch(`${serverURL}/my-events/`)
-      .then((res) => {
-        return res.json();
-      })
+    .then((res) => {
+      return res.json()
+    })
 }
 
 export const deleteHandler = (id) => {
   const deleting = fetch(`${serverURL}/delete/${id}`, {
     method: 'DELETE'
-  });
-  return deleting;
+  })
+  return deleting
 }
 
 export const getEvents = async () => {
   return fetch(`${serverURL}/my-events`)
-  .then(data=> data.json())
-  .then(events => events)
-  .catch(err => console.log(err))
+    .then(data => data.json())
+    .then(events => events)
+    .catch(err => console.log(err))
 }
