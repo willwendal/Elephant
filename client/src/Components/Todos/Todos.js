@@ -12,41 +12,50 @@ function Todos () {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // fetch to backend
-    dispatch(addTodo(todo));
-    setTodo('');
+
+    if (todo !== '') {
+      dispatch(addTodo(todo));
+      setTodo('');
+    }
+
+
   };
 
   const handleChange = ({ target }) => setTodo(target.value);
 
+  const todoList = todos.map((todo) => {
+    return (
+      <li className="todo-list-item"
+        style={{
+          textDecoration: todo.completed ? 'line-through' : 'none',
+        }}
+        key={todo.id}
+        onClick={() => dispatch(completed(todo.id))}
+      >
+      {todo.text}
+      </li>
+    )}
+  );
+  
   return (
-    <div className='todo-form-container'>
-      <div className='todo-form'>
-        <h1 className='todo-header'>Todo:</h1>
-        <form className='todo-input-button' onSubmit={handleSubmit}>
-          <div className='todo-input-button'>
-            <input className='todo-input' type='text' onChange={handleChange} value={todo} />
-            <button className='todo-button' type='submit'>Add task</button>
+    <div className="todo-form-container">
+      <div className="todo-form">
+        <h1 className="todo-header">Todo:</h1>
+        <form className="todo-input-button" onSubmit={handleSubmit}>
+          <div className="todo-input-button">
+            <input data-testid="inputField" className="todo-input" type="text" onChange={handleChange} value={todo} />
+            <button data-testid="todoSubmit" className="todo-button" type="submit">Add task</button>
+
           </div>
         </form>
       </div>
       <div className='todo-list'>
         <ul>
-          {todos.map(todo => (
-            <li
-              className='todo-list-item'
-              style={{
-                textDecoration: todo.completed ? 'line-through' : 'none'
-              }}
-              key={todo.id}
-              onClick={() => dispatch(completed(todo.id))}
-            >
-              {todo.text}
-            </li>
-          ))}
+
+          {todoList}
         </ul>
-      </div>
-    </div>
+  </div>
+  </div>
   );
 }
 
