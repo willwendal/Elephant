@@ -13,9 +13,12 @@ function Todos() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    //fetch to backend
-    dispatch(addTodo(todo));
-    setTodo('');
+    console.log('________________________________ fire ?????  __________________________________');
+    if (todo !== '') {
+      console.log('________________________________ fired __________________________________');
+      dispatch(addTodo(todo));
+      setTodo('');
+    }
   };
 
   const handleChange = ({ target }) => setTodo(target.value);
@@ -40,8 +43,8 @@ function Todos() {
         <h1 className="todo-header">Todo:</h1>
         <form className="todo-input-button" onSubmit={handleSubmit}>
           <div className="todo-input-button">
-            <input className="todo-input" type="text" onChange={handleChange} value={todo} />
-            <button className="todo-button" type="submit">Add task</button>
+            <input data-testid="inputField" className="todo-input" type="text" onChange={handleChange} value={todo} />
+            <button data-testid="todoSubmit" className="todo-button" type="submit">Add task</button>
           </div>
         </form>
       </div>
