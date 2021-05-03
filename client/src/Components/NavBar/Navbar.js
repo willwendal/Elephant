@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className='navbar-container'>
       <div className='navbar-logo-slogan-container'>
         <img src={navbarElephantLogo} alt='elephant logo' />
-        <p data-testid="PARA" className='navbar-slogan'>Never Forget</p>
+        <p className='navbar-slogan'>Never Forget</p>
       </div>
       <div className='navbar-navlinks'>
         <NavLink data-testid="addEvents" className="nav-link" to='/Addevents'>Add Events</NavLink>
