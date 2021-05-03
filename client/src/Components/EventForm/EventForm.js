@@ -1,22 +1,22 @@
-import './EventForm.scss'
-import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import './EventForm.scss';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function EventForm ({ postEvent }) {
-  const [occasion, setOccasion] = useState('')
-  const [location, setLocation] = useState('')
-  const [date, setDate] = useState('')
+  const [occasion, setOccasion] = useState('');
+  const [location, setLocation] = useState('');
+  const [date, setDate] = useState('');
 
-  const history = useHistory()
+  const history = useHistory();
 
   async function submitAndNavigate (e) {
-    e.preventDefault()
+    e.preventDefault();
     if (occasion !== '' && location !== '' && date !== '') {
-      await postEvent({ occasion, location, date })
-      setOccasion('')
-      setLocation('')
-      setDate('')
-      history.push('/Myevents')
+      await postEvent({ occasion, location, date });
+      setOccasion('');
+      setLocation('');
+      setDate('');
+      history.push('/Myevents');
     }
   }
 
@@ -32,7 +32,7 @@ function EventForm ({ postEvent }) {
             required
             data-testid='occasion'
             className='input'
-            onChange={(e) => { setOccasion(e.target.value) }}
+            onChange={(e) => { setOccasion(e.target.value); }}
             value={occasion}
             type='text'
           />
@@ -44,7 +44,7 @@ function EventForm ({ postEvent }) {
             required
             data-testid='location'
             className='input'
-            onChange={(e) => { setLocation(e.target.value) }}
+            onChange={(e) => { setLocation(e.target.value); }}
             value={location}
             type='text'
           />
@@ -56,7 +56,7 @@ function EventForm ({ postEvent }) {
             required
             data-testid='date'
             className='input-date'
-            onChange={(e) => { setDate(e.target.value) }}
+            onChange={(e) => { setDate(e.target.value); }}
             value={date}
             type='date'
           />
@@ -67,7 +67,7 @@ function EventForm ({ postEvent }) {
         </div>
       </form>
     </div>
-  )
+  );
 }
 
-export default EventForm
+export default EventForm;

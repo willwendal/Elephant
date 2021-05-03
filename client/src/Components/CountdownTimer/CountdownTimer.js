@@ -1,47 +1,47 @@
-import './CountdownTimer.scss'
-import { useEffect, useState, useRef } from 'react'
+import './CountdownTimer.scss';
+import { useEffect, useState, useRef } from 'react';
 
 function CountdownTimer () {
-  const [timerDays, setTimerDays] = useState('00')
-  const [timerHours, setTimerHours] = useState('00')
-  const [timerMinutes, setTimerMinutes] = useState('00')
-  const [timerSeconds, setTimerSeconds] = useState('00')
+  const [timerDays, setTimerDays] = useState('00');
+  const [timerHours, setTimerHours] = useState('00');
+  const [timerMinutes, setTimerMinutes] = useState('00');
+  const [timerSeconds, setTimerSeconds] = useState('00');
 
-  let interval = useRef()
+  let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date('May 30, 2021 00:00:00').getTime()
+    const countdownDate = new Date('May 30, 2021 00:00:00').getTime();
 
     interval = setInterval(() => {
-      const now = new Date().getTime()
-      const distance = now - countdownDate
+      const now = new Date().getTime();
+      const distance = now - countdownDate;
 
-      const daysNegative = Math.floor(distance / (1000 * 60 * 60 * 24))
-      const days = Math.abs(daysNegative)
-      const hoursNegative = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)))
-      const hours = Math.abs(hoursNegative)
-      const minutesNegative = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-      const minutes = Math.abs(minutesNegative)
-      const secondsNegative = Math.floor((distance % (1000 * 60)) / 1000)
-      const seconds = Math.abs(secondsNegative)
+      const daysNegative = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const days = Math.abs(daysNegative);
+      const hoursNegative = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
+      const hours = Math.abs(hoursNegative);
+      const minutesNegative = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const minutes = Math.abs(minutesNegative);
+      const secondsNegative = Math.floor((distance % (1000 * 60)) / 1000);
+      const seconds = Math.abs(secondsNegative);
 
       if (distance > 0) {
-        clearInterval(interval)
+        clearInterval(interval);
       } else {
-        setTimerDays(days)
-        setTimerHours(hours)
-        setTimerMinutes(minutes)
-        setTimerSeconds(seconds)
+        setTimerDays(days);
+        setTimerHours(hours);
+        setTimerMinutes(minutes);
+        setTimerSeconds(seconds);
       }
-    }, 1000)
-  }
+    }, 1000);
+  };
 
   useEffect(() => {
-    startTimer()
+    startTimer();
     return () => {
-      clearInterval(interval)
-    }
-  })
+      clearInterval(interval);
+    };
+  });
 
   return (
     <section className='timer-container'>
@@ -74,7 +74,7 @@ function CountdownTimer () {
         </div>
       </section>
     </section>
-  )
+  );
 }
 
-export default CountdownTimer
+export default CountdownTimer;

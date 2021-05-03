@@ -1,23 +1,23 @@
-import './Todos.scss'
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import './Todos.scss';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { addTodo, completed } from '../../redux/actions'
+import { addTodo, completed } from '../../redux/actions';
 
 function Todos () {
-  const [todo, setTodo] = useState('')
+  const [todo, setTodo] = useState('');
 
-  const todos = useSelector(state => state.todos)
-  const dispatch = useDispatch()
+  const todos = useSelector(state => state.todos);
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
     // fetch to backend
-    dispatch(addTodo(todo))
-    setTodo('')
-  }
+    dispatch(addTodo(todo));
+    setTodo('');
+  };
 
-  const handleChange = ({ target }) => setTodo(target.value)
+  const handleChange = ({ target }) => setTodo(target.value);
 
   return (
     <div className='todo-form-container'>
@@ -47,7 +47,7 @@ function Todos () {
         </ul>
       </div>
     </div>
-  )
-};
+  );
+}
 
-export default Todos
+export default Todos;

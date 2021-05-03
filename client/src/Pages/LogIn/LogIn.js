@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
-import './LogIn.scss'
-import elephantLogo from '../../assets/elephant-logo.jpeg'
-import { useHistory } from 'react-router-dom'
+import React, { useState } from 'react';
+import './LogIn.scss';
+import elephantLogo from '../../assets/elephant-logo.jpeg';
+import { useHistory } from 'react-router-dom';
 
 function LogIn () {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const history = useHistory()
+  const history = useHistory();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const userLoginInfo = { username: username, password: password }
+    e.preventDefault();
+    const userLoginInfo = { username: username, password: password };
     if (userLoginInfo.username !== '' && userLoginInfo.password !== '') {
       // TODO: authentificate with server
-      history.push('/Myevents')
+      history.push('/Myevents');
     }
-  }
+  };
 
   return (
     <div className='app-container'>
@@ -66,7 +66,7 @@ function LogIn () {
       </div>
     </div>
 
-  )
+  );
 }
 
-export default LogIn
+export default LogIn;

@@ -1,6 +1,6 @@
-import './Navbar.scss'
-import navbarElephantLogo from '../../assets/Navbar-elephant-logo.jpg'
-import { NavLink } from 'react-router-dom'
+import './Navbar.scss';
+import navbarElephantLogo from '../../assets/Navbar-elephant-logo.jpg';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -15,7 +15,7 @@ const Navbar = () => {
         <NavLink data-testid='myEvents' className='nav-link' to='/Myevents'>My Events</NavLink>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
