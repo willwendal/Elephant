@@ -1,5 +1,5 @@
-const serverURL = 'http://localhost:3005';
-const URL = 'http://localhost:30005/my-events';
+const { REACT_APP_URL } = process.env
+const serverURL = REACT_APP_URL;
 
 export const postEventDB = (newEvent) => {
   return fetch(`${serverURL}/add-event`, {
