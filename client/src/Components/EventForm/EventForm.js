@@ -31,7 +31,7 @@ function EventForm ({ postEvent }) {
           <input
             required
             data-testid='occasion'
-            className='input'
+            className='input-occasion'
             onChange={(e) => { setOccasion(e.target.value); }}
             value={occasion}
             type='text'
@@ -43,7 +43,7 @@ function EventForm ({ postEvent }) {
           <input
             required
             data-testid='location'
-            className='input'
+            className='input-location'
             onChange={(e) => { setLocation(e.target.value); }}
             value={location}
             type='text'

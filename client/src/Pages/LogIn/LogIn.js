@@ -45,7 +45,7 @@ function LogIn () {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               data-testid='passwordInput'
-              className='input-username'
+              className='input-password'
               required
             />
           </label>
