@@ -1,7 +1,7 @@
 
 describe('Log in page test', () => {
   it('Get http request', () => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3001')
     // cy.pause()
   })
   it('Has sign in button and it works', () => {

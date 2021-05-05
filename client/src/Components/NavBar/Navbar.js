@@ -1,4 +1,5 @@
 import './Navbar.scss';
+import React, { FunctionComponent } from "react";
 import navbarElephantLogo from '../../assets/Navbar-elephant-logo.jpg';
 import { NavLink } from 'react-router-dom';
 

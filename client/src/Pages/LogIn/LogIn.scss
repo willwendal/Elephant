@@ -12,15 +12,14 @@ $green: #067166;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  height: 100vh;
-  padding: 10%;
+  height: 100%;
 }
 
 .app-elephant-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .slogan {
@@ -30,8 +29,10 @@ $green: #067166;
 
 .app-intro-text {
   font-family: 'Roboto', sans-serif;
-  margin-top: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
+  font-size: 0.8rem;
   color:#644E5D;
 }
 
@@ -58,7 +59,7 @@ $green: #067166;
 
 .center {
   display: flex;
-  margin-top: 5%;
+  margin-top: 1%;
   justify-content: 'center';
   align-items: 'center';
   text-align: center;
@@ -72,7 +73,7 @@ $green: #067166;
 }
 .input-username {
   height: 1.5rem;
-  width: 30vh;
+  width: 100%;
   border: solid #644E5D;
   display: flex;
   justify-content: space-between;
@@ -81,7 +82,7 @@ $green: #067166;
 
 .input-password {
   height: 1.5rem;
-  width: 30vh;
+  width: 100%;
   border: solid #644E5D;
   display: flex;
   justify-content: space-between;

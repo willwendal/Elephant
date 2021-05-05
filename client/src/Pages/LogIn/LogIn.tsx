@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import './LogIn.scss';
 import elephantLogo from '../../assets/elephant-logo.jpeg';
 import { useHistory } from 'react-router-dom';
@@ -9,11 +10,10 @@ function LogIn () {
 
   const history = useHistory();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const userLoginInfo = { username: username, password: password };
     if (userLoginInfo.username !== '' && userLoginInfo.password !== '') {
-      // TODO: authentificate with server
       history.push('/Myevents');
     }
   };
