@@ -2,10 +2,8 @@ import { combineReducers } from 'redux';
 
 let nextId = 0;
 const todos = (
-
   state = [],
-  action
-
+  action = {id: '', type: '', text: ''}
 ) => {
   switch (action.type) {
     case 'ADD_TODO': {
@@ -16,7 +14,7 @@ const todos = (
     }
     case 'COMPLETED_TODO': {
       const { id } = action;
-      return state.map((todo) => (
+      return state.map((todo: {id: '', completed: false}) => (
         {
           ...todo,
           completed: todo.id === id

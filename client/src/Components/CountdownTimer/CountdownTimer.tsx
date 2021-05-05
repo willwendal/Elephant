@@ -1,5 +1,5 @@
 import './CountdownTimer.scss';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 function CountdownTimer () {
   const [timerDays, setTimerDays] = useState('00');
@@ -7,23 +7,23 @@ function CountdownTimer () {
   const [timerMinutes, setTimerMinutes] = useState('00');
   const [timerSeconds, setTimerSeconds] = useState('00');
 
-  let interval = useRef();
+  let interval: number;
 
   const startTimer = () => {
     const countdownDate = new Date('May 30, 2021 00:00:00').getTime();
 
-    interval = setInterval(() => {
+    interval = window.setTimeout(() => {
       const now = new Date().getTime();
       const distance = now - countdownDate;
 
       const daysNegative = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const days = Math.abs(daysNegative);
+      const days = Math.abs(daysNegative).toString();
       const hoursNegative = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
-      const hours = Math.abs(hoursNegative);
+      const hours = Math.abs(hoursNegative).toString();
       const minutesNegative = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const minutes = Math.abs(minutesNegative);
+      const minutes = Math.abs(minutesNegative).toString();
       const secondsNegative = Math.floor((distance % (1000 * 60)) / 1000);
-      const seconds = Math.abs(secondsNegative);
+      const seconds = Math.abs(secondsNegative).toString();
 
       if (distance > 0) {
         clearInterval(interval);

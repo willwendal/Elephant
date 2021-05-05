@@ -1,4 +1,5 @@
-import NewEvent from '../Interface/interface';
+import { NewEvent } from '../Interfaces/newEvent';
+import { EventData } from '../Interfaces/eventData';
 
 const { REACT_APP_URL } = process.env
 const serverURL = REACT_APP_URL;
@@ -22,7 +23,7 @@ export const postEventDB = async (newEvent: NewEvent): Promise <NewEvent> => {
   }
 };
 
-export const getDetails = async (): Promise <[Event]> => {
+export const getDetails = async (): Promise <EventData[]> => {
   const res = await fetch(`${serverURL}/my-events/`);
   return await res.json();
 };
@@ -34,7 +35,7 @@ export const deleteHandler = async (id: string): Promise <Response> => {
   return deleting;
 };
 
-export const getEvents = async (): Promise <[Event]> => {
+export const getEvents = async (): Promise <EventData[]> => {
   return await fetch(`${serverURL}/my-events`)
     .then(data => data.json())
     .then(events => events)

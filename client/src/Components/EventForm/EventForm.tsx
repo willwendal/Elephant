@@ -1,18 +1,19 @@
 import './EventForm.scss';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { NewEvent } from '../../Interfaces/newEvent';
 
-function EventForm ({ postEvent }) {
+function EventForm (props: { postEvent: (event: NewEvent) => void }) {
   const [occasion, setOccasion] = useState('');
   const [location, setLocation] = useState('');
   const [date, setDate] = useState('');
 
   const history = useHistory();
 
-  async function submitAndNavigate (e) {
+  async function submitAndNavigate (e: React.FormEvent) {
     e.preventDefault();
     if (occasion !== '' && location !== '' && date !== '') {
-      await postEvent({ occasion, location, date });
+      await props.postEvent({ occasion, location, date });
       setOccasion('');
       setLocation('');
       setDate('');
