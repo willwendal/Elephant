@@ -5,14 +5,15 @@ import CountdownTimer from '../../Components/CountdownTimer/CountdownTimer';
 import { getDetails } from '../../services/APIservice';
 import Navbar from '../../Components/NavBar/Navbar';
 import Todo from '../../Components/Todos/Todos';
+import Event from '../../Interface/interface';
 import './EventDetails.scss';
 
 function EventDetails () {
-  const [event, setEvent] = useState({});
-  const { id } = useParams();
+  const [event, setEvent] = useState<Event>({_id: '', occasion: '', location: '', date: ''});
+  const { id } = useParams<{id: string}>();
 
   useEffect(() => {
-    getDetails(id)
+    getDetails()
       .then((data) => {
         data.forEach(event => {
           if (event._id === id) setEvent(event);

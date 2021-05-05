@@ -1,4 +1,5 @@
 import NewEvent from '../Interface/interface';
+import Event from '../Interface/interface';
 
 const { REACT_APP_URL } = process.env
 const serverURL = REACT_APP_URL;
@@ -22,7 +23,7 @@ export const postEventDB = async (newEvent: NewEvent): Promise <NewEvent> => {
   }
 };
 
-export const getDetails = async (): Promise <[Event]> => {
+export const getDetails = async (): Promise <Event[]> => {
   const res = await fetch(`${serverURL}/my-events/`);
   return await res.json();
 };
