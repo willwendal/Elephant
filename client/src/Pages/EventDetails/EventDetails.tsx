@@ -5,23 +5,23 @@ import CountdownTimer from '../../Components/CountdownTimer/CountdownTimer';
 import { getDetails } from '../../services/APIservice';
 import Navbar from '../../Components/NavBar/Navbar';
 import Todo from '../../Components/Todos/Todos';
-import Event from '../../Interface/interface';
+import { EventData } from '../../Interfaces/eventData';
 import './EventDetails.scss';
 
 function EventDetails () {
-  const [event, setEvent] = useState<Event>({_id: '', occasion: '', location: '', date: ''});
+  const [selectedEvent, setSelectedEvent] = useState<EventData>({_id: '', occasion: '', location: '', date: ''});
   const { id } = useParams<{id: string}>();
 
   useEffect(() => {
     getDetails()
       .then((data) => {
         data.forEach(event => {
-          if (event._id === id) setEvent(event);
+          if (event._id === id) setSelectedEvent(event);
         });
       });
   }, [id]);
 
-  const formatDate = moment(event.date).format('MMMM Do YYYY');
+  const formatDate = moment(selectedEvent.date).format('MMMM Do YYYY');
 
   return (
     <div>
@@ -29,10 +29,10 @@ function EventDetails () {
       <CountdownTimer />
       <div className='Dashboard3-container'>
         <h1 className='dash3-occasion'>
-          {event.occasion}: {formatDate}
+          {selectedEvent.occasion}: {formatDate}
         </h1>
         <h1 className='dash3-location'>
-          Location: {event.location}
+          Location: {selectedEvent.location}
         </h1>
         <Todo />
       </div>

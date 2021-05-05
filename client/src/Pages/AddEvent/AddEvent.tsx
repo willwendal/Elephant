@@ -2,7 +2,7 @@ import './AddEvent.scss';
 import Navbar from '../../Components/NavBar/Navbar';
 import EventForm from '../../Components/EventForm/EventForm';
 import { postEventDB } from '../../services/APIservice';
-import NewEvent from '../../Interface/interface';
+import {NewEvent} from '../../Interfaces/newEvent';
 
 function AddEvent () {
 

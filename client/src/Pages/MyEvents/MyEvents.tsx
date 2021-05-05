@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { deleteHandler, getEvents } from '../../services/APIservice';
 import Navbar from '../../Components/NavBar/Navbar';
 import EventCard from '../../Components/EventCard/EventCard';
-import EventData from '../../Interface/interface';
+import {EventData} from '../../Interfaces/eventData';
 import './MyEvents.scss';
 
 function MyEvents () {
