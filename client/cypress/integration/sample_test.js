@@ -1,8 +1,7 @@
 
 describe('Log in page test', () => {
   it('Get http request', () => {
-    cy.visit('http://localhost:3001')
-    // cy.pause()
+    cy.visit('http://localhost:3000')
   })
   it('Has sign in button and it works', () => {
     cy.contains('Sign in').click()
@@ -14,7 +13,6 @@ describe('Log in page test', () => {
       .type('peanutbutter{enter}')
   })  
 })
-
 
 describe('My events page', () => {
   it('Includes my events page', () => {
