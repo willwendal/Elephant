@@ -1,12 +1,11 @@
 import './Todos.scss';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { addTodo, completed } from '../../redux/actions';
 
 function Todos () {
   const [todo, setTodo] = useState('');
-
+  
   const todos = useSelector(state => state.todos);
   const dispatch = useDispatch();
 
@@ -17,8 +16,6 @@ function Todos () {
       dispatch(addTodo(todo));
       setTodo('');
     }
-
-
   };
 
   const handleChange = ({ target }) => setTodo(target.value);
