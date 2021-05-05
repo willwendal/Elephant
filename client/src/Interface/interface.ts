@@ -3,3 +3,10 @@ export default interface NewEvent {
   location: string,
   date: string
 }
+
+export default interface Event {
+  _id: string,
+  occasion: string,
+  location: string,
+  date:string
+}
