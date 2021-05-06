@@ -20,7 +20,7 @@ function EventCard (props: { event: EventData, deleteEvent: (_id:string) => void
       <button data-testid='moreDetailsButton' className='event-card-button' type='button' onClick={handleClick}>
         More Details
       </button>
-      <button data-testid='deleteButton' type='button' onClick={() => props.deleteEvent(props.event._id)}>DELETE</button>
+      <button data-testid='deleteButton' className='event-card-delete' type='button' onClick={() => props.deleteEvent(props.event._id)}>DELETE</button>
     </div>
   );
 }
