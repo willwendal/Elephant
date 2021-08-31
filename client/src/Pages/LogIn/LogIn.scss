@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* SASS Variables */
+
+$green: #067166;
+
+/* ------- */
+
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app-elephant-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.slogan {
+  font-family: 'Rock Salt', cursive;
+  color: #067166;
+}
+
+.app-intro-text {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color:#644E5D;
+}
+
+.app-button {
+  padding:0.35em 1.2em;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background: $green;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  margin-top: 3rem;
+  padding: 1em 6em;
+}
+
+.username {
+  font-size: 1.2em;
+  color:#067166;
+  margin-top: 4rem;
+  font-weight: bold;
+  align-content: center;
+}
+
+.center {
+  display: flex;
+  margin-top: 1%;
+  justify-content: 'center';
+  align-items: 'center';
+  text-align: center;
+}
+
+.password {
+  font-size: 1.2em;
+  color:#067166;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+.input-username {
+  height: 1.5rem;
+  width: 100%;
+  border: solid #644E5D;
+  display: flex;
+  justify-content: space-between;
+  text-indent: 5px;
+}
+
+.input-password {
+  height: 1.5rem;
+  width: 100%;
+  border: solid #644E5D;
+  display: flex;
+  justify-content: space-between;
+  text-indent: 5px;
+}
+
+.register {
+  margin-top: 1em;
+  font-family: 'Roboto', sans-serif;
+  color:#644E5D;
+}
+
+span {
+  text-decoration: underline;
+}

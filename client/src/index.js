@@ -1,21 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes/Routes';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import todos from './reducers';
+// import reduxStore from './redux/store';
 
-let store = createStore(todos, window.__REDUX_DEVTOOLS_EXTENSION__ &&
-  window.__REDUX_DEVTOOLS_EXTENSION__());
+const reduxStore = createStore(todos);
+
+// const store = createStore(todos, window.__REDUX_DEVTOOLS_EXTENSION__ &&
+//   window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
-<Provider store={store}>
-  <Router>
-    <Routes />
-  </Router>
-</Provider>,
+  <Provider store={reduxStore}>
+    <Router>
+      <Routes />
+    </Router>
+  </Provider>,
   document.getElementById('root')
-)
+);
